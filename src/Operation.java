@@ -138,7 +138,7 @@ public class Operation {
         try (Statement statement = connect().createStatement()) {
             if (!statement.executeQuery("select * from student where id=" + id).next()) {
                 System.out.println("妹有这个人噢");
-                Thread.sleep(500);
+                Thread.sleep(50);
                 return 0;
             } else {
                 statement.executeUpdate("delete from student where id=" + id);
