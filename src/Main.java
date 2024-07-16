@@ -1,5 +1,6 @@
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
 // 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
+
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -49,18 +50,14 @@ public class Main {
                         break;
                     }
                 }
-                 case 4:{
-                     System.out.println("请输入要删除的学生id");
-                     scanner.nextLine();
-                     operation.delete(scanner.nextInt(),scanner);
-                     break;
-                 }
+                case 4: {
+                    System.out.println("请输入要删除的学生id");
+                    scanner.nextLine();
+                    operation.delete(scanner.nextInt(), scanner);
+                    break;
+                }
 
             }
         }
-
-
-
-
     }
 }

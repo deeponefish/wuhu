@@ -13,7 +13,7 @@ public class Operation {
         return connection;
     }
 
-    void insert(Scanner scanner) throws SQLException {
+    public void insert(Scanner scanner) throws SQLException {
         Student student = new Student();
         System.out.println("请输入学生id");
         student.id = scanner.nextInt();
@@ -46,7 +46,7 @@ public class Operation {
         }
     }
 
-    void find(int id) {
+    public void find(int id) {
         try (Statement statement = connect().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
             if (id == 0) {
                 ResultSet set = statement.executeQuery("select * from student");
@@ -93,7 +93,7 @@ public class Operation {
         }
     }
 
-    int modify(int id, Scanner scanner) throws SQLException {
+    public int modify(int id, Scanner scanner) throws SQLException {
         try (Statement statement = connect().createStatement()) {
             while (true) {
                 if (!statement.executeQuery("select * from student where id=" + id).next()) {
@@ -132,9 +132,7 @@ public class Operation {
         }
     }
 
-    ;
-
-    int delete(int id, Scanner scanner) throws SQLException {
+    public int delete(int id, Scanner scanner) throws SQLException {
         try (Statement statement = connect().createStatement()) {
             if (!statement.executeQuery("select * from student where id=" + id).next()) {
                 System.out.println("妹有这个人噢");
